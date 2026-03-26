@@ -1,0 +1,263 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1rem 5rem;
+}
+
+.logo {
+    color: cyan;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap; 
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+.hero {
+    position: relative;
+    background-color: #3ca9f2;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem 5rem 6rem 5rem;
+}
+
+.blurred-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background: radial-gradient(circle at top right, transparent 50%, rgba(100, 100, 100, 0.3));
+    filter: blur(50px);
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.left-content {
+    width: 45%;
+    color: white;
+}
+
+.left-content h1 {
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.left-content h1::after {
+    content: '';
+    display: block;
+    width: 15rem;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 5px;
+}
+
+.left-content p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.left-content button {
+    margin-top: 2rem;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 1.2rem 3.5rem;
+    border-radius: 2.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.left-content button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.right-content {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-content img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-contact {
+    position: absolute;
+    bottom: 2rem;
+    left: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    color: white;
+    font-size: 1.1rem;
+    z-index: 3;
+}
+
+.contact-info {
+    line-height: 1.6;
+}
+
+.social-logos {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.social-logos a {
+    text-decoration: none;
+    display: block;
+    border: none;
+}
+
+.facebook-logo-sq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.instagram-logo-cir, .tiktok-logo-cir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.instagram-logo-cir {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.instagram-logo-cir i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.tiktok-logo-cir {
+    background-color: black;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.tiktok-logo-cir i {
+    font-size: 1.8rem;
+}
+@media (max-width: 1150px) {
+    nav {
+        gap: 2rem; 
+    }
+    header {
+        padding: 1rem 3rem;
+    }
+    .hero {
+        padding: 2rem 3rem 6rem 3rem;
+    }
+    .left-content h1 {
+        font-size: 4.5rem; 
+    }
+    .left-content h1::after {
+        width: 10rem;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+    
+    nav a {
+        display: none; 
+    }
+
+    .hero {
+        padding: 2rem 1.5rem;
+    }
+    
+    .hero-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .left-content, .right-content {
+        width: 100%;
+    }
+
+    .left-content h1 {
+        font-size: 4rem;
+    }
+
+    .left-content h1::after {
+        margin: 10px auto; 
+    }
+
+    .right-content {
+        margin-top: 3rem; 
+    }
+
+    .footer-contact {
+        position: static;
+        flex-direction: column; 
+        gap: 1.5rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+}
